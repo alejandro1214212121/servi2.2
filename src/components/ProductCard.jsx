@@ -18,11 +18,19 @@ function ProductCard({ product }) {
   return (
     <div className="bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:border-[#6BBF59]">
 
-      <div className="h-32 bg-[#EBF7E8] flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#4A9A39]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-          <path d="M4.5 13.5 13.5 4.5a4.243 4.243 0 0 1 6 6L10.5 19.5a4.243 4.243 0 0 1-6-6Z" />
-          <line x1="9" y1="9" x2="15" y2="15" />
-        </svg>
+      <div className="h-32 bg-[#EBF7E8] flex items-center justify-center overflow-hidden">
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-contain p-2"
+          />
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#4A9A39]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <path d="M4.5 13.5 13.5 4.5a4.243 4.243 0 0 1 6 6L10.5 19.5a4.243 4.243 0 0 1-6-6Z" />
+            <line x1="9" y1="9" x2="15" y2="15" />
+          </svg>
+        )}
       </div>
 
       <div className="p-3 flex flex-col gap-1.5 flex-1">

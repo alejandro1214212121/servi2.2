@@ -2,6 +2,8 @@
 import ProductCard from "./ProductCard";
 import { products } from "../data/products";
 
+const visibleProducts = products.filter((p) => p.image);
+
 function ProductGrid() {
   return (
     <section className="max-w-7xl mx-auto py-10 px-4">
@@ -16,14 +18,14 @@ function ProductGrid() {
         </h2>
       </div>
 
-      {products.length === 0 ? (
+      {visibleProducts.length === 0 ? (
         <div className="text-center py-20 text-gray-400">
           <p className="text-lg font-medium">Sin productos disponibles</p>
           <p className="text-sm mt-1">Vuelve pronto, estamos actualizando el catálogo.</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          {products.map((product) => (
+          {visibleProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
