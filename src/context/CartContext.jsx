@@ -1,12 +1,13 @@
-// src/context/CartContext.jsx
-import { createContext, useContext, useState } from "react";
+// src/context/CartContext.jsx  — agrega soporte para toast
+import { createContext, useContext, useState, useCallback } from "react";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState([]);
+  const [toast, setToast] = useState({ show: false, message: "" });
 
-  function addItem(product) {
+  const addItem = useCallback((product) => {
     setItems((prev) => {
       const exists = prev.find((i) => i.id === product.id);
       if (exists) {
@@ -16,7 +17,11 @@ export function CartProvider({ children }) {
       }
       return [...prev, { ...product, qty: 1 }];
     });
-  }
+    setToast({ show: false, message: "" });
+    setTimeout(() => {
+      setToast({ show: true, message: `✓ ${product.name} agregado al pedido` });
+    }, 10);
+  }, []);
 
   function removeItem(id) {
     setItems((prev) => prev.filter((i) => i.id !== id));
@@ -36,7 +41,7 @@ export function CartProvider({ children }) {
   const totalItems = items.reduce((acc, i) => acc + i.qty, 0);
 
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, changeQty, clearCart, totalItems }}>
+    <CartContext.Provider value={{ items, addItem, removeItem, changeQty, clearCart, totalItems, toast }}>
       {children}
     </CartContext.Provider>
   );
