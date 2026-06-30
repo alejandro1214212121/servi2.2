@@ -17,7 +17,7 @@ import Azitromicina_Colmed from "../assets/products/Colmed/Azitromicina_Colmed.j
 import BVit_Colmed from "../assets/products/Colmed/B-Vit_Colmed.jpeg";
 import BetametasonaAMP2ml_Colmed from "../assets/products/Colmed/BetametasonaAMP2ml_Colmed.jpeg";
 import Cloranfenicol_Colmed from "../assets/products/Colmed/Cloranfenicol_Colmed.jpeg";
-import ClotrimazoloVulosx10_Colmed from "../assets/products/Colmed/ClotrimazolovulosX10_Colmed.jpeg";
+import ClotrimazoloVulosx10_Colmed from "../assets/products/Colmed/Clotrimazolovulosx10_Colmed.jpeg";
 import ComplejoBAMP_Colmed from "../assets/products/Colmed/ComplejoBAMP_Colmed.jpeg";
 import DiclofenacoHidro_Colmed from "../assets/products/Colmed/Diclofenaco_Hidro_Colmed.jpeg";
 import DiclofenacoAMP_Colmed from "../assets/products/Colmed/DiclofenacoAMP_Colmed.jpeg";
